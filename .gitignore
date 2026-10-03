@@ -2,4 +2,5 @@ knocker
 knocker-epoll
 knocker-epoll-timer
 knocker-intrusive
+knocker-threadpool
 errors.txt
