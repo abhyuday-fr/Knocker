@@ -1,7 +1,7 @@
 CXX = g++
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -O2
 
-all: knocker knocker-epoll knocker-epoll-timer knocker-intrusive
+all: knocker knocker-epoll knocker-epoll-timer knocker-intrusive knocker-threadpool
 
 knocker:
 	$(CXX) $(CFLAGS) knocker.cc -o $@
@@ -15,7 +15,10 @@ knocker-epoll-timer:
 knocker-intrusive:
 	$(CXX) $(CFLAGS) knocker-intrusive.cc -o $@
 
+knocker-threadpool:
+	$(CXX) $(CFLAGS) knocker-threadpool.cc -o $@
+
 clean:
-	rm -rf knocker knocker-epoll knocker-epoll-timer knocker-intrusive
+	rm -rf knocker knocker-epoll knocker-epoll-timer knocker-intrusive knocker-threadpool
 
 .PHONY: all clean
