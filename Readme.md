@@ -23,6 +23,8 @@ The sweep in previous version takes O(N) for single timer tick, checking sockets
 
 5. `knocker-io_uring` : (to be implemented)
 
+6. `knocker-threadpool` : This is the baseline that almost everyone writes. N worker threads, each doing ONE blocking-style connect at a time.  Made as strong as possible so the comparison is fair: lock-free distribution, same 2000ms timeout, default 500 threads.
+
 ## Usage of knocker
 1. run `make kncoker`
 2. run `./knocker <ip-address> <port-start> <port-end>`
